@@ -11,6 +11,7 @@ async function bootstrap() {
   mongoose.connection.on('error', (err) => {
     Logger.error('MongoDB connection error:', err);
   });
+  app.enableCors();
   await app.listen(3000);
 }
 bootstrap();
